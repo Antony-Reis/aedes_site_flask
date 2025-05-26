@@ -9,3 +9,29 @@ html {
     height: 100%;
     overflow-y: scroll;
 }
+.main {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    padding: 1dvh;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.header {
+    width: 70%;
+    height: 10dvh;
+    background-color: green;
+    margin: 0 auto;
+}
+
+.nav {
+    width: 20vw;
+    height: 80dvh;
+    background-color: brown;
+}
+
+.content {
+    width: 45vw;
+    height: 80dvh;
+    background-color: aquamarine;
+}
