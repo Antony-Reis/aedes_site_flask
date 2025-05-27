@@ -16,8 +16,8 @@
             <nav class="nav">
                 <ul>
                     <li><a href="{{ url_for('render_validarcpf') }}">Validador de CPF</a></li>
-                    <li>Gerador de CPF</li>
-                    <li>Gerador de senha</li>
+                    <li><a href="{{ url_for('render_geradordecpf') }}">Gerador de CPF</a></li>
+                    <li><a href="{{ url_for('render_geradordesenha') }}">Gerador de senha</a></li>
                     <li>Conversor de moedas</li>
                     <li>Conversor de unidades</li>
                 </ul>
@@ -29,6 +29,7 @@
             CONTEUDO
             {% endblock %}</section>
     </div>
+    <footer class="footer">Desenvolvido por ...</footer>
 </body>
 
 </html>

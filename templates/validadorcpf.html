@@ -3,5 +3,9 @@
 {% block title %} <title>Validador de CPF</title> {% endblock %}
 
 {% block content %}
-CONTEUDO
+<form method="POST" action="/validarcpf"> 
+    CPF: <input type="text" id="validarcpf" name="validarcpf" placeholder="Insira um CPF"><br>
+    <input type="submit" value="Validar">
+    <p>{{ cpfvalido or '' }}</p>
+</form>
 {% endblock %}

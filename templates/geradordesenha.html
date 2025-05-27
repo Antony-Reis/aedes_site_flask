@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block title %} <title>Gerador de senha</title> {% endblock %}
+
+{% block content %}
+<form method="POST" action="/gerarsenha">
+    <p id="senha">{{ senha or '' }}</p><br>
+    Maiusculas<input class="checkbox" type="checkbox" value="1" name="checkbox">
+    Minusculas<input class="checkbox" type="checkbox" value="2" name="checkbox">
+    Números<input class="checkbox" type="checkbox" value="3" name="checkbox">
+    Especiais<input class="checkbox" type="checkbox" value="4" name="checkbox">
+    1<input type="range" min="1" max="50" step="1" name="slide">50<br>
+    <input type="submit" value="Gerar">
+</form>
+{% endblock %}

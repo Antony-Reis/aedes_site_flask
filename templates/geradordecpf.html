@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block title %} <title>Gerador de CPF</title> {% endblock %}
+
+{% block content %}
+
+<form action="/gerarcpf" method="POST">
+   <p id="cpf"> {{ cpf_str or '' }} </p><br>
+    Com formatação?<input class="checkbox" type="checkbox" name="checkbox" value="1"><br>
+    <input type="submit" value="Gerar">
+</form>
+
+{% endblock %}
