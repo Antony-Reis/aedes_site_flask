@@ -32,6 +32,10 @@ html {
     background-color: brown;
 }
 
+.nav ul li {
+    list-style: none;
+}
+
 .content {
     width: 45vw;
     height: 75dvh;
