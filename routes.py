@@ -161,7 +161,6 @@ def gerar_cpf():
 
     from random import randint
     formatado = request.form.get("checkbox")
-    cpfs = []
 
     cpf_invalido = True
 
@@ -169,15 +168,12 @@ def gerar_cpf():
         cpf_criado = "".join([str(randint(0, 9)) for i in range(11)])
         cpf_invalido = False if validar_cpf(cpf_criado) else True
             
-    cpfs.append(cpf_criado)
         
     cpf_str = ""
     
     if formatado == '1':
-        for c in cpfs:
-            cpf_str += f'{c[:3]}.{c[3:6]}.{c[6:9]}-{c[9:]}' + "\n"
+        cpf_str += f'{cpf_criado[:3]}.{cpf_criado[3:6]}.{cpf_criado[6:9]}-{cpf_criado[9:]}' + "\n"
     else:
-        for c in cpfs:
-            cpf_str += c + "\n"
+        cpf_str += cpf_criado + "\n"
    
     return render_template("geradordecpf.html", cpf_str=cpf_str)
