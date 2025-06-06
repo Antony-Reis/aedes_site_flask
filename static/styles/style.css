@@ -2,55 +2,114 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
 }
 
-
 html {
-    height: 100%;
-    overflow-y: scroll;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
 }
 
 .header {
-    width: 100%;
-    height: 10dvh;
-    background-color: green;
+    background-color: rgb(184, 220, 124);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    color: white;
+}
+
+.logo {
+    display: inline-block;
+    margin-top: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.logo__imagem{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-color: rgb(184, 220, 124);
+    border-radius: 5%;
     
 }
 
-.main {
-    display: flex;
-    width: 70%;
-    padding: 1dvh;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    justify-self: center;
-}
-
 .nav {
-    width: 20vw;
-    height: 75dvh;
-    background-color: brown;
+    
 }
-
-.nav ul li {
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    gap: 20px;
     list-style: none;
+    padding: 0;
+    background-color: rgb(184, 220, 124);
+    
 }
 
-.content {
-    width: 45vw;
-    height: 75dvh;
-    background-color: aquamarine;
+.nav__item {
+
+
 }
 
-.footer {
-    position: absolute;
+.nav__link {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    gap: 20px;
+    display: block;
+    padding: 10px 5px;
+    background-color: rgb(184, 220, 124);
+    border-color: transparent;
+    border: 3px;
+    
+}
+
+.article {
+  background-color: #f0f9ff; /* tom claro azulado */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 800px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.h1 {
+  color: rgb(3, 105, 206); /* azul vibrante */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-left: 6px solid rgb(3, 105, 206);
+  padding-left: 1rem;
+}
+
+.h4 {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.footer{
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 10dvh;
-    background-color: blue;
+    background-color: rgb(184, 220, 124);
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.footer_content{
+    position:;
+
 }
