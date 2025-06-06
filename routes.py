@@ -15,7 +15,6 @@ def render_geradordecpf():
 
 @app.route("/geradordesenha")
 def render_geradordesenha():
-
     return render_template("geradordesenha.html")
 
 
