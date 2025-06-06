@@ -22,7 +22,7 @@
                     <a href="{{ url_for('render_geradordecpf') }}" class="nav__link">Gerador de Cpf</a>
                 </li>
                 <li class="nav__item">
-                    <a href="" class="nav__link">Gerador de Senha</a>
+                    <a href="{{ url_for('render_geradordesenha') }}" class="nav__link">Gerador de Senha</a>
                 </li>
                 <li class="nav__item">
                     <a href="{{ url_for('render_validarcpf') }}" class="nav__link">Validador de Cpf</a>
@@ -30,7 +30,7 @@
             </ul>
         </nav>
 		</header>
-        
+        {% block content %}
         <article class="article">
         <h1 class="h1">Sobre o projeto</h1>
         <h4 class="h4">
@@ -42,7 +42,7 @@
             Os alunos envolvidos na criação foram: Antony Reis, Igor Rocha e Guilherme Melo.
         </h4>
         </article>
-        
+        {% endblock %}
         <footer class="footer">
         <div class="footer_content">
             <p>UFVJM 2025</p>
