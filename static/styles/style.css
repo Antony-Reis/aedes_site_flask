@@ -56,8 +56,14 @@ body {
     
 }
 
+
+
 .nav__item {
 
+
+}
+
+.nav_item_{
 
 }
 
@@ -70,8 +76,24 @@ body {
     padding: 10px 5px;
     background-color: rgb(184, 220, 124);
     border-color: transparent;
-    border: 3px;
-    
+    border: 3px;  
+    transition: 0.5s;
+}
+
+.nav__link:hover{
+    color: rgb(3, 105, 206);
+}
+
+.selected{
+    font-size: 18px;
+    color: rgb(3, 105, 206);
+    text-decoration: none;
+    gap: 20px;
+    display: block;
+    padding: 10px 5px;
+    background-color: rgb(184, 220, 124);
+    border-color: transparent;
+    border: 3px;  
 }
 
 .article {
@@ -110,6 +132,109 @@ body {
 }
 
 .footer_content{
-    position:;
 
+}
+
+
+.article h1 {
+    color: rgb(3, 105, 206); /* azul vibrante */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-left: 6px solid rgb(3, 105, 206);
+  padding-left: 1rem;
+}
+
+.checkbox {
+    -webkit-appearance: none;   
+  appearance: none;
+  
+  width: 3rem;
+  height: 1.5rem;
+  border: rgb(3, 105, 206) solid 2px;
+  border-radius: 20rem;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.checkboxs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox:checked {
+    background-color: rgb(3, 105, 206);
+    border: solid 1px #f0f9ff
+}
+
+.form {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.slider {
+    width: 100%;
+}
+.slider input {
+  -webkit-appearance: none;
+  appearance: none;  
+  width: 100%;
+  max-height: 15px;
+  outline: none;
+  opacity: 0.8;
+  background-color: gray;
+  border-radius: 20rem;
+  cursor: pointer;
+}
+
+.slider span{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.slider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(3, 105, 206);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider input:-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(3, 105, 206);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+#senha {
+    padding: 1px;
+    border: 1px solid gray;
+    font-size: 1.35rem;
+    height: 2rem;
+}
+
+.submit { 
+    width: 7rem;
+    height: 3rem;
+    margin-top: 2rem;
+  cursor: pointer;
+  border-radius: 20rem;
+  background-color: rgb(3, 105, 206);
+  color: #f0f9ff;
+    border: none;
+    font-size: 1.5rem;
+    transition: 1.5s;
+}
+
+.submit:hover{
+    border: #f0f9ff 2px solid;
 }

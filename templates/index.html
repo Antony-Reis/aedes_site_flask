@@ -12,11 +12,11 @@
 			<a href="{{ url_for('render_index') }}" class="logo">
                 <img src="./../static/images/Vertical sem assinatura colorida.png" alt="" class="logo__imagem">
             </a>
-
-			<nav class="nav">
+    {% block nav_list %}
+    <nav class="nav">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="{{ url_for('render_index') }}" class="nav__link">Home</a>
+                    <a href="{{ url_for('render_index') }}" class="selected" class="nav__link">Home</a>
                 </li>
                 <li class="nav__item">
                     <a href="{{ url_for('render_geradordecpf') }}" class="nav__link">Gerador de Cpf</a>
@@ -29,6 +29,8 @@
                 </li>
             </ul>
         </nav>
+        {% endblock%}
+			
 		</header>
         {% block content %}
         <article class="article">

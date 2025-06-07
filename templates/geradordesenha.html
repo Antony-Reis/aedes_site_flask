@@ -2,14 +2,41 @@
 
 {% block title %} <title>Gerador de senha</title> {% endblock %}
 
+{% block nav_list %}
+    <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    
+                    <a href="{{ url_for('render_index') }}" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{ url_for('render_geradordecpf') }}" class="nav__link">Gerador de Cpf</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{ url_for('render_geradordesenha') }}" class="selected" class="nav__link">Gerador de Senha</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{ url_for('render_validarcpf') }}" class="nav__link">Validador de Cpf</a>
+                </li>
+            </ul>
+        </nav>
+{% endblock%}
+
 {% block content %}
-<form method="POST" action="/gerarsenha">
+<article class="article">
+<h1>Gerador de senha</h1>
+
+<form class="form" method="POST" action="/gerarsenha">
     <p id="senha">{{ senha or '' }}</p><br>
-    Maiusculas<input class="checkbox" type="checkbox" value="1" name="checkbox">
-    Minusculas<input class="checkbox" type="checkbox" value="2" name="checkbox">
-    Números<input class="checkbox" type="checkbox" value="3" name="checkbox">
-    Especiais<input class="checkbox" type="checkbox" value="4" name="checkbox">
-    1<input type="range" min="1" max="50" step="1" name="slide">50<br>
-    <input type="submit" value="Gerar">
+    <span class="checkboxs">
+    Maiusculas  <input class="checkbox" type="checkbox" value="1" name="checkbox">
+    Minusculas  <input class="checkbox" type="checkbox" value="2" name="checkbox">
+    Números  <input class="checkbox" type="checkbox" value="3" name="checkbox">
+    Especiais  <input class="checkbox" type="checkbox" value="4" name="checkbox">
+    </span><br>
+
+    <span class="slider"><input type="range" min="1" max="50" step="1" name="slide"><br><span><span>1</span><span>50</span></span></span>
+    <input class="submit" type="submit" value="Gerar">
 </form>
+</article>
 {% endblock %}
