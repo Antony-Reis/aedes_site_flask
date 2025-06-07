@@ -27,16 +27,19 @@
 <h1>Gerador de senha</h1>
 
 <form class="form" method="POST" action="/gerarsenha">
-    <p id="senha">{{ senha or '' }}</p><br>
+    <p  class="text-output" id="senha">{{ senha or '' }}</p><br>
     <span class="checkboxs">
-    Maiusculas  <input class="checkbox" type="checkbox" value="1" name="checkbox">
-    Minusculas  <input class="checkbox" type="checkbox" value="2" name="checkbox">
-    Números  <input class="checkbox" type="checkbox" value="3" name="checkbox">
-    Especiais  <input class="checkbox" type="checkbox" value="4" name="checkbox">
+    Maiusculas  <input class="checkbox" type="checkbox" value="1" name="checkbox" {% if '1' in selecionados %}checked{% endif %}>
+    Minusculas  <input class="checkbox" type="checkbox" value="2" name="checkbox" {% if '2' in selecionados %}checked{% endif %}>
+    Números  <input class="checkbox" type="checkbox" value="3" name="checkbox" {% if '3' in selecionados %}checked{% endif %}>
+    Especiais  <input class="checkbox" type="checkbox" value="4" name="checkbox" {% if '4' in selecionados %}checked{% endif %}>
     </span><br>
 
-    <span class="slider"><input type="range" min="1" max="50" step="1" name="slide"><br><span><span>1</span><span>50</span></span></span>
-    <input class="submit" type="submit" value="Gerar">
+    <span class="slider-container"><span id="sliderValue"></span><span class="slider"><input type="range" value="{{ tamanho_senha or 25}}" min="1" max="50" step="1" name="slide" id="slider"></span> </span>
+    <div class="botoes-container">
+  <input class="submit" type="submit" value="Gerar">
+  <button type="button" id="copiarBtn-Senha" class="submit">Copiar</button>
+</div>
 </form>
 </article>
 {% endblock %}

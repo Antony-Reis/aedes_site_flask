@@ -63,9 +63,7 @@ body {
 
 }
 
-.nav_item_{
 
-}
 
 .nav__link {
     font-size: 18px;
@@ -96,7 +94,8 @@ body {
     border: 3px;  
 }
 
-.article {
+.article{
+
   background-color: #f0f9ff; /* tom claro azulado */
   padding: 2rem;
   border-radius: 16px;
@@ -147,7 +146,6 @@ body {
 .checkbox {
     -webkit-appearance: none;   
   appearance: none;
-  
   width: 3rem;
   height: 1.5rem;
   border: rgb(3, 105, 206) solid 2px;
@@ -170,12 +168,24 @@ body {
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
-    
+}
 
+.checkboxs-cpf {
+  display: flex;
+  margin-right: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .slider {
-    width: 100%;
+    width: 90%;
 }
 .slider input {
   -webkit-appearance: none;
@@ -188,12 +198,6 @@ body {
   border-radius: 20rem;
   cursor: pointer;
 }
-
-.slider span{
-    display: flex;
-    justify-content: space-between;
-}
-
 
 .slider input::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -213,9 +217,7 @@ body {
   cursor: pointer;
 }
 
-
-
-#senha {
+.text-output{
     padding: 1px;
     border: 1px solid gray;
     font-size: 1.35rem;
@@ -237,4 +239,38 @@ body {
 
 .submit:hover{
     border: #f0f9ff 2px solid;
+}
+
+#sliderValue{
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 20rem;
+  background-color: rgb(3, 105, 206);
+  color: #f0f9ff;
+  text-align: center;
+  align-content: center;
+}
+
+
+
+.botoes-container {
+  width: 100%;
+  display: flex;
+  align-content: end;
+  justify-content: space-between;
+}
+
+.cpf-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.valido {
+  color: green;
+}
+
+.invalido {
+  color: red;
 }

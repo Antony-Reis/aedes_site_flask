@@ -23,10 +23,24 @@
 {% endblock%}
 
 {% block content %}
-<form method="POST" action="/validarcpf"> 
-    CPF: <input type="text" id="validarcpf" name="validarcpf" placeholder="Insira um CPF"><br>
-    <input type="submit" value="Validar">
-    <p>{{ cpfvalido or '' }}</p>
+<article class="article">
+<h1>Validador de CPF</h1>
+<form class="form" method="POST" action="/validarcpf"> 
+    <span class="cpf-input">
+    CPF:
+    <input class="text-output" type="text" id="validarcpf" name="validarcpf" placeholder="Insira um CPF">
+    </span>
+<br>
+<br>
+    <p class="{% if 'válido' in cpfvalido %} valido
+    {% else %} invalido
+    {% endif %}">
+    {{ cpfvalido or '' }}</p>
+
+    <div class="botoes-container">
+    <input class="submit" type="submit" value="Validar">
+    </div>
 </form>
+</article>
 {% endblock %}
 

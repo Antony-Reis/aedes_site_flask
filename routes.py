@@ -1,5 +1,5 @@
 from main import app
-from flask import render_template, request
+from flask import render_template, request, jsonify
 
 @app.route("/")
 def render_index():
@@ -24,16 +24,17 @@ def render_geradordesenha():
 @app.route("/validarcpf", methods=["POST"])
 def validarcpf():
     cpf = request.form["validarcpf"]
+    cpf = cpf.strip()
     if len(cpf) == 0:
         return render_template("validadorcpf.html", cpfvalido=None)
     cpf_format = cpf.replace('.','').replace('-','')
 
     if not cpf_format.isdecimal():
-        cpfvalido = f'CPF inválido'
+        cpfvalido = f'O CPF é inválido'
         return render_template("validadorcpf.html", cpfvalido=cpfvalido)
     
     if len(cpf_format) != 11:
-        cpfvalido = f'CPF {cpf} inválido'
+        cpfvalido = f'O CPF {cpf} é inválido'
         return render_template("validadorcpf.html", cpfvalido=cpfvalido)
     
     cpf9 = cpf_format[:9]
@@ -72,10 +73,10 @@ def validarcpf():
     dois_ultimos = str(primeiro_digito) + str(segundo_digito)
             
     if cpf_format[-2:] == dois_ultimos:
-        cpfvalido = f'CPF {cpf} válido'
+        cpfvalido = f'O CPF {cpf} é válido'
         return render_template("validadorcpf.html", cpfvalido=cpfvalido)
          
-    cpfvalido = f'CPF {cpf} inválido'
+    cpfvalido = f'O CPF {cpf} é inválido'
     return render_template("validadorcpf.html", cpfvalido=cpfvalido)
 
 @app.route("/gerarsenha", methods=["POST"])
@@ -88,20 +89,20 @@ def gerarsenha():
     if 50 <= tamanho_senha <= 1:
         return render_template("geradordesenha.html", senha='')
 
-    lista_request = request.form.getlist('checkbox')
+    selecionados = request.form.getlist('checkbox')
 
     caracteres = []
 
-    if '1' in lista_request:
+    if '1' in selecionados:
         caracteres.append([chr(i) for i in range(ord('A'), ord('Z') + 1)])
 
-    if '2' in lista_request:
+    if '2' in selecionados:
         caracteres.append([chr(i) for i in range(ord('a'), ord('z') + 1)])
 
-    if '3' in lista_request:
+    if '3' in selecionados:
         caracteres.append([str(i) for i in range(10)])
     
-    if '4' in lista_request:
+    if '4' in selecionados:
         caracteres.append(list("!@#$%^&*()-_=+[]{}|;:,.<>?/`~"))
 
     if len(caracteres) == 0:
@@ -110,7 +111,7 @@ def gerarsenha():
     senha = ''
     for i in range(tamanho_senha):
         senha += ch(ch(caracteres))
-    return render_template("geradordesenha.html", senha=senha)
+    return render_template("geradordesenha.html", senha=senha , selecionados=selecionados,tamanho_senha=tamanho_senha)
 
 @app.route("/gerarcpf", methods=["POST"])
 def gerar_cpf():
@@ -175,4 +176,10 @@ def gerar_cpf():
     else:
         cpf_str += cpf_criado + "\n"
    
-    return render_template("geradordecpf.html", cpf_str=cpf_str)
+    return render_template("geradordecpf.html", cpf_str=cpf_str, formatado=formatado)
+
+@app.route('/update_slider', methods=['POST'])
+def update_slider():
+    data = request.get_json()
+    slider_value = data.get('value')
+    return jsonify(slider_value)

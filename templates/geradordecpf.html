@@ -23,13 +23,18 @@
 {% endblock%}
 
 {% block content %}
+<article class="article">
+    <h1>Gerador de CPF</h1>
+<form class="form" action="/gerarcpf" method="POST">
+   <p id="cpf" class="text-output"> {{ cpf_str or '' }} </p><br>
 
-<form action="/gerarcpf" method="POST">
-   <p id="cpf"> {{ cpf_str or '' }} </p><br>
-    Com formatação?<input class="checkbox" type="checkbox" name="checkbox" value="1"><br>
-    <input type="submit" value="Gerar">
+   <span class="checkboxs-cpf">Com formatação?   <input class="checkbox" type="checkbox" name="checkbox" value="1" {% if '1' == formatado %}checked{% endif %}></span>
+   <div class="botoes-container">
+    <input type="submit" value="Gerar" class="submit">
+<button type="button" class="submit" id="copiarBtn-CPF">Copiar</button>
+   </div>
 </form>
-
+</article>
 {% endblock %}
 
 
