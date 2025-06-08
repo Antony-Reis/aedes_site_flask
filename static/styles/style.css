@@ -199,7 +199,8 @@ body {
   display: flex;
   margin-right: 1rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 10px;
 }
 
 .slider-container {
@@ -286,13 +287,15 @@ body {
 .botoes-container {
   width: 100%;
   display: flex;
-  align-content: end;
+  align-content: center;
   justify-content: space-between;
 }
 
+
 .cpf-input {
+  gap: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
 }
 
