@@ -52,3 +52,5 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => copiarBtn.textContent = "Copiar", 2000);
         });
     });
+
+    

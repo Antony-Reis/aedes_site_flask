@@ -219,9 +219,13 @@ body {
   max-height: 15px;
   outline: none;
   opacity: 0.8;
-  background-color: gray;
+  background-color: lightgray;
   border-radius: 20rem;
   cursor: pointer;
+}
+
+.slider input:hover {
+  opacity: 1;
 }
 
 .slider input::-webkit-slider-thumb {
