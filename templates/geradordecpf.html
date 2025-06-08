@@ -28,7 +28,8 @@
 <form class="form" action="/gerarcpf" method="POST">
    <p id="cpf" class="text-output"> {{ cpf_str or '' }} </p><br>
 
-   <span class="checkboxs-cpf">Com formatação?   <input class="checkbox" type="checkbox" name="checkbox" value="1" {% if '1' == formatado %}checked{% endif %}></span>
+   <span class="checkboxs-cpf">Com formatação?   <input class="checkbox" type="checkbox" name="checkbox" value="1" checked {% if '1' == formatado %}checked{% endif %}>
+    </span>
    <div class="botoes-container">
     <input type="submit" value="Gerar" class="submit">
 <button type="button" class="submit" id="copiarBtn-CPF">Copiar</button>

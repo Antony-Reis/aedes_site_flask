@@ -32,8 +32,8 @@
     </span>
 <br>
 <br>
-    <p class="{% if 'válido' in cpfvalido %} valido
-    {% else %} invalido
+    <p class="{% if 'inválido' in cpfvalido %} invalido
+    {% else %} valido
     {% endif %}">
     {{ cpfvalido or '' }}</p>
 
