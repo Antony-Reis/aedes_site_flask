@@ -17,7 +17,9 @@ def render_geradordecpf():
 def render_geradordesenha():
     return render_template("geradordesenha.html")
 
-
+@app.route("/conversordemoedas")
+def render_conversordemoedas():
+    return render_template("conversordemoedas.html")
 ''' Abaixo estão as funções responsaveis por gerar algo em um HTML'''
 
 
@@ -177,6 +179,34 @@ def gerar_cpf():
         cpf_str += cpf_criado + "\n"
    
     return render_template("geradordecpf.html", cpf_str=cpf_str, formatado=formatado)
+
+
+@app.route('/converter', methods=['POST'])
+def converter_moeda():
+    from decimal import Decimal
+    import requests
+
+    valor_convertido = None
+
+    valor = request.form.get('valor', type=float)
+
+    base = request.form.get('conveter')       
+    target = request.form.get('convertido') 
+
+    if base == target:
+        return render_template("conversordemoedas.html", valor=valor, valor_convertido=valor, converter=base, convertido=target)
+
+    response = requests.get(f'https://economia.awesomeapi.com.br/last/{base}-{target}')
+    dc = response.json()
+
+    valor_target = float(dc[f'{base}{target}']['bid'])
+
+    
+    valor_convertido = round(Decimal(valor * valor_target),2)
+
+    return render_template("conversordemoedas.html", valor=valor, valor_convertido=valor_convertido, converter=base, convertido=target)
+
+
 
 @app.route('/update_slider', methods=['POST'])
 def update_slider():

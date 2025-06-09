@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+
+{% block title %} <title>Conversor de moedas</title> {% endblock %}
+
+{% block nav_list %}
+    <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    
+                    <a href="{{ url_for('render_index') }}" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{ url_for('render_geradordecpf') }}" class="nav__link">Gerador de Cpf</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{ url_for('render_geradordesenha') }}" class="nav__link">Gerador de Senha</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{ url_for('render_validarcpf') }}"  class="nav__link">Validador de Cpf</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{ url_for('render_conversordemoedas') }}" class="selected" class="nav__link">Conversor de moedas</a>
+                </li>
+            </ul>
+        </nav>
+{% endblock%}
+
+{% block content %}
+<article class="article">
+<form class="form" action="/converter" method="POST"> 
+    <div class="container-conversor">
+
+<input type="number" name="valor" step="0.01" placeholder="Valor" value="{{ valor or ''}}">
+
+<select name="conveter" id="conveter">
+    <option value="BRL" {% if converter == 'BRL' %}selected{% endif %}>Real Brasileiro</option>
+    <option value="USD" {% if converter == 'USD' %}selected{% endif %}>Dólar Americano</option>
+    <option value="EUR" {% if converter == 'EUR' %}selected{% endif %}>Euro</option>
+    <option value="GBP" {% if converter == 'GBP' %}selected{% endif %}>Libra Esterlina</option>
+</select>
+
+<select name="convertido" id="convertido">
+    <option value="BRL" {% if convertido == 'BRL' %}selected{% endif %}>Real Brasileiro</option>
+    <option value="USD" {% if convertido == 'USD' %}selected{% endif %}>Dólar Americano</option>
+    <option value="EUR" {% if convertido == 'EUR' %}selected{% endif %}>Euro</option>
+    <option value="GBP" {% if convertido == 'GBP' %}selected{% endif %}>Libra Esterlina</option>
+</select>
+
+<input class="submit" type="submit" value="Converter">
+
+<p> {{ valor_convertido or '' }}</p>
+
+</div>
+</form>
+
+
+</article>
+{% endblock %}
