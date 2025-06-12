@@ -26,9 +26,11 @@ def render_conversordemoedas():
 @app.route("/validarcpf", methods=["POST"])
 def validarcpf():
     cpf = request.form["validarcpf"]
+
+    if cpf == '':
+        return render_template("validadorcpf.html", cpfvalido='')
+
     cpf = cpf.strip()
-    if len(cpf) == 0:
-        return render_template("validadorcpf.html", cpfvalido=None)
     cpf_format = cpf.replace('.','').replace('-','')
 
     if not cpf_format.isdecimal():
@@ -186,12 +188,14 @@ def converter_moeda():
     from decimal import Decimal
     import requests
 
-    valor_convertido = None
-
+    
     valor = request.form.get('valor', type=float)
-
     base = request.form.get('conveter')       
-    target = request.form.get('convertido') 
+    target = request.form.get('convertido')
+
+
+    if valor is None:
+        return render_template("conversordemoedas.html", valor=valor, valor_convertido='', converter=base, convertido=target)
 
     if base == target:
         return render_template("conversordemoedas.html", valor=valor, valor_convertido=valor, converter=base, convertido=target)

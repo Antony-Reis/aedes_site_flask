@@ -32,9 +32,10 @@
         <form class="form" action="/converter" method="POST"> 
             <div class="container-valorParaConverter">
                 <p class="simbolo-moeda">Valor a ser convertido:</p>
-                <input type="number" name="valor" id="valor" placeholder="Valor" value="{{ valor or ''}}">
+                <input class="text-output" type="number" name="valor" id="valor" placeholder="Valor" value="{{ valor or ''}}">
                 <p class="simbolo-moeda">$</p>
             </div>
+            <p> {{ valor_convertido or '' }}</p>
                         
             <div class="container-conversor">
 
@@ -58,7 +59,7 @@
                 <input class="submit" type="submit" value="Converter">
             </div>
 
-                    <p> {{ valor_convertido or '' }}</p>
+                    
 
             </div>
         </form>
