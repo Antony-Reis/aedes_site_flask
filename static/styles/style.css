@@ -42,9 +42,7 @@ body {
     
 }
 
-.nav {
-    
-}
+
 .nav__list {
     display: flex;
     justify-content: space-between;
@@ -55,15 +53,6 @@ body {
     background-color: rgb(184, 220, 124);
     
 }
-
-
-
-.nav__item {
-
-
-}
-
-
 
 .nav__link {
     font-size: 18px;
@@ -128,10 +117,6 @@ body {
     color: #fff;
     text-align: center;
     padding: 15px 0;
-}
-
-.footer_content{
-
 }
 
 
@@ -343,6 +328,11 @@ body {
   border-radius: 0.5rem;
   padding: 0 0.5rem;
 }
-.container-ValorConvertido{
-  
+
+.text-output-convertido {
+    padding: 1px;
+ border: 1px solid gray;
+    font-size: 1.35rem;
+    height: 2rem; 
+    min-width: 10rem;
 }

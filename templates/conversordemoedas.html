@@ -33,9 +33,9 @@
             <div class="container-valorParaConverter">
                 <p class="simbolo-moeda">Valor a ser convertido:</p>
                 <input class="text-output" type="number" name="valor" id="valor" placeholder="Valor" value="{{ valor or ''}}" min="0" max="1000000000" step=".01">
-                <p class="simbolo-moeda">$</p>
+                <p class="simbolo-moeda">$ →  $</p>
+                <p class="text-output-convertido" > {{ valor_convertido or '' }}</p>
             </div>
-            <p> {{ valor_convertido or '' }}</p>
                         
             <div class="container-conversor">
 
