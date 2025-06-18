@@ -97,6 +97,9 @@ def gerarsenha():
 
     caracteres = []
 
+    if len(caracteres) == 0:
+        return render_template("geradordesenha.html", senha='Selecione pelo menos um tipo de caractere.')
+
     if '1' in selecionados:
         caracteres.append([chr(i) for i in range(ord('A'), ord('Z') + 1)])
 
@@ -108,9 +111,6 @@ def gerarsenha():
     
     if '4' in selecionados:
         caracteres.append(list("!@#$%^&*()-_=+[]{}|;:,.<>?/`~"))
-
-    if len(caracteres) == 0:
-        return render_template("geradordesenha.html", senha='Selecione pelo menos um tipo de caractere.')
 
     senha = ''
     for i in range(tamanho_senha):
